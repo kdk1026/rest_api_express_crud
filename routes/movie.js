@@ -174,6 +174,8 @@ router.delete('/:id', function(req, res) {
                 res.json( {code:400, message:'해당 영화가 존재하지 않습니다.'} );
             }
         });
+
+        conn.release();
     });
 });
 
