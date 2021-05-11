@@ -4,6 +4,9 @@ const getConnection = require('../libs/mysql_pool.js');
 
 // 모든 항목 가져오기
 router.get('/', function(req, res) {
+    // 500 에러 확인하기 위함
+    // throw new Error('에러');
+
     getConnection((conn) => {
         let sql = 'select * from movie';
         let query = conn.query(sql, function(err, rows) {
